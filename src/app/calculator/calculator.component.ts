@@ -16,11 +16,12 @@ export class CalculatorComponent implements OnInit {
     let users = JSON.parse(localStorage.getItem('currentUser'));
     this.LogedinUser= users.id; 
      const storedData = JSON.parse(localStorage.getItem('userCalulateHistory') || '[]') as any[];
-     const entry = storedData.find(item => item.userId === this.LogedinUser);
-     if(entry != undefined)
-      {
-        this.history = storedData;
-      }
+     this.history = storedData;
+    //  const entry = storedData.find(item => item.userId === this.LogedinUser);
+    //  if(entry != undefined)
+    //   {
+    //     this.history = storedData;
+    //   }
      
    
 

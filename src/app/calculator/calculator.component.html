@@ -31,9 +31,13 @@
 <div class="col-sm-3 history">
     <h5 class="card-header">History</h5>
   <div class="card-body" style="  overflow-y: scroll;  height: 350px;">
-    <h5 class="card-title">Scroll down for latest entery</h5>
     
-      <p class="card-text" *ngFor="let data of history"> {{data.data}}</p>
+      <p class="card-text" *ngFor="let data of history"> 
+      <span *ngIf="data.userId == LogedinUser">
+        {{data.data}}
+      </span>
+        
+      </p>
   
 
    
