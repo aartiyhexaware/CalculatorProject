@@ -1,0 +1,43 @@
+  <div class="row d-flex justify-content-center">
+ 
+    <div class="col-sm-4">
+
+<div class="calculator">
+ 
+        <input type="text" (input)="onInputChange($event)" (keypress)="onKeyPress($event)"  
+        class="calculator__output" [(ngModel)]="displayValue"
+          [value]="displayValue" >
+    <div class="calculator__keys">
+      <button class="calculator__key calculator__key--operator" (click)="numberAppendToDisplay('+')">+</button>
+      <button class="calculator__key calculator__key--operator" (click)="numberAppendToDisplay('-')">-</button>
+      <button class="calculator__key calculator__key--operator" (click)="numberAppendToDisplay('*')">&times;</button>
+      <button class="calculator__key calculator__key--operator" (click)="numberAppendToDisplay('/')">÷</button>
+      <button class="calculator__key" (click)="numberAppendToDisplay('7')">7</button>
+      <button class="calculator__key" (click)="numberAppendToDisplay('8')">8</button>
+      <button class="calculator__key" (click)="numberAppendToDisplay('9')">9</button>
+      <button class="calculator__key" (click)="numberAppendToDisplay('4')">4</button>
+      <button class="calculator__key" (click)="numberAppendToDisplay('5')">5</button>
+      <button class="calculator__key" (click)="numberAppendToDisplay('6')">6</button>
+      <button class="calculator__key" (click)="numberAppendToDisplay('1')">1</button>
+      <button class="calculator__key" (click)="numberAppendToDisplay('2')">2</button>
+      <button class="calculator__key" (click)="numberAppendToDisplay('3')">3</button>
+      <button class="calculator__key" (click)="numberAppendToDisplay('0')">0</button>
+      <button class="calculator__key" (click)="numberAppendToDisplay('.')">.</button>
+      <button class="calculator__key" (click)="clearDisplay()">AC</button>
+      <button class="calculator__key calculator__key--enter" (click)="calculate()">=</button>
+    </div>
+  </div>
+</div>
+<div class="col-sm-3 history">
+    <h5 class="card-header">History</h5>
+  <div class="card-body" style="  overflow-y: scroll;  height: 350px;">
+    <h5 class="card-title">Scroll down for latest entery</h5>
+    
+      <p class="card-text" *ngFor="let data of history"> {{data.data}}</p>
+  
+
+   
+
+   </div>
+    </div>
+</div>
